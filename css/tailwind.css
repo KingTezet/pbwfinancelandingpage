@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1a237e; /* deep-navy */
+  --color-primary-50: #e8eaf6; /* indigo-50 */
+  --color-primary-100: #c5cae9; /* indigo-100 */
+  --color-primary-200: #9fa8da; /* indigo-200 */
+  --color-primary-300: #7986cb; /* indigo-300 */
+  --color-primary-400: #5c6bc0; /* indigo-400 */
+  --color-primary-500: #3f51b5; /* indigo-500 */
+  --color-primary-600: #3949ab; /* indigo-600 */
+  --color-primary-700: #303f9f; /* indigo-700 */
+  --color-primary-800: #283593; /* indigo-800 */
+  --color-primary-900: #1a237e; /* indigo-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #3f51b5; /* indigo-500 */
+  --color-secondary-50: #e8eaf6; /* indigo-50 */
+  --color-secondary-100: #c5cae9; /* indigo-100 */
+  --color-secondary-200: #9fa8da; /* indigo-200 */
+  --color-secondary-300: #7986cb; /* indigo-300 */
+  --color-secondary-400: #5c6bc0; /* indigo-400 */
+  --color-secondary-500: #3f51b5; /* indigo-500 */
+  --color-secondary-600: #3949ab; /* indigo-600 */
+  --color-secondary-700: #303f9f; /* indigo-700 */
+  --color-secondary-800: #283593; /* indigo-800 */
+  --color-secondary-900: #1a237e; /* indigo-900 */
+
+  /* Accent Colors */
+  --color-accent: #2196f3; /* blue-500 */
+  --color-accent-50: #e3f2fd; /* blue-50 */
+  --color-accent-100: #bbdefb; /* blue-100 */
+  --color-accent-200: #90caf9; /* blue-200 */
+  --color-accent-300: #64b5f6; /* blue-300 */
+  --color-accent-400: #42a5f5; /* blue-400 */
+  --color-accent-500: #2196f3; /* blue-500 */
+  --color-accent-600: #1e88e5; /* blue-600 */
+  --color-accent-700: #1976d2; /* blue-700 */
+  --color-accent-800: #1565c0; /* blue-800 */
+  --color-accent-900: #0d47a1; /* blue-900 */
+
+  /* Background Colors */
+  --color-background: #ffffff; /* white */
+  --color-surface: #f8f9fa; /* gray-50 */
+
+  /* Text Colors */
+  --color-text-primary: #212121; /* gray-800 */
+  --color-text-secondary: #757575; /* gray-500 */
+
+  /* Status Colors */
+  --color-success: #4caf50; /* green-500 */
+  --color-success-50: #e8f5e8; /* green-50 */
+  --color-success-100: #c8e6c9; /* green-100 */
+  --color-success-500: #4caf50; /* green-500 */
+  --color-success-600: #43a047; /* green-600 */
+  --color-success-700: #388e3c; /* green-700 */
+
+  --color-warning: #ff9800; /* orange-500 */
+  --color-warning-50: #fff3e0; /* orange-50 */
+  --color-warning-100: #ffe0b2; /* orange-100 */
+  --color-warning-500: #ff9800; /* orange-500 */
+  --color-warning-600: #fb8c00; /* orange-600 */
+  --color-warning-700: #f57c00; /* orange-700 */
+
+  --color-error: #f44336; /* red-500 */
+  --color-error-50: #ffebee; /* red-50 */
+  --color-error-100: #ffcdd2; /* red-100 */
+  --color-error-500: #f44336; /* red-500 */
+  --color-error-600: #e53935; /* red-600 */
+  --color-error-700: #d32f2f; /* red-700 */
+
+  /* Border Colors */
+  --color-border: #e0e0e0; /* gray-300 */
+  --color-border-focus: #2196f3; /* blue-500 */
+
+  /* Shadow Variables */
+  --shadow-cta: 0 4px 12px rgba(26, 35, 126, 0.15);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Animation Variables */
+  --transition-fast: 250ms ease-out;
+  --transition-smooth: 300ms ease-in-out;
+}
+
+/* Custom Component Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white font-semibold px-6 py-3 rounded-lg transition-all duration-250 ease-out;
+    box-shadow: var(--shadow-cta);
+  }
+
+  .btn-primary:hover {
+    @apply bg-accent-600 transform -translate-y-0.5;
+    box-shadow: 0 6px 16px rgba(26, 35, 126, 0.2);
+  }
+
+  .card-testimonial {
+    @apply bg-white rounded-lg p-6 transition-all duration-300 ease-in-out;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-testimonial:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .form-input {
+    @apply border border-gray-300 rounded-lg px-4 py-3 transition-all duration-250 ease-out;
+  }
+
+  .form-input:focus {
+    @apply border-accent-500 outline-none ring-2 ring-accent-100;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Custom Animations */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-typewriter {
+  animation: typewriter 3s steps(40, end);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--color-accent);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-count-up {
+  animation: countUp 2s ease-out forwards;
+}
+
+/* Utility Classes */
+.shadow-cta {
+  box-shadow: var(--shadow-cta);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.transition-smooth {
+  transition: all var(--transition-smooth);
+}
